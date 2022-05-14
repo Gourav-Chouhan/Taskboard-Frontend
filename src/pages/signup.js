@@ -29,6 +29,7 @@ function Signup() {
 			console.log("data", data);
 			if (data.acknowledged) {
 				navigate("/login");
+				alert("Successfully signed up!");
 			} else {
 				alert(data);
 			}
