@@ -1,0 +1,312 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#root {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+body {
+	font-size: 20px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: "Poppins", sans-serif;
+	overflow-x: hidden;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 8vh;
+	color: #fff;
+	width: 100vw;
+	position: relative;
+	background-color: greenyellow;
+	background: linear-gradient(to right, #11998e, #38ef7d);
+	padding: 10px;
+}
+
+.header > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	padding: 5px 10px;
+	margin: auto clamp(100px, 14vw, 150px);
+}
+
+.header > div > * {
+	margin: 15px;
+}
+
+.header img {
+	height: 90%;
+	max-height: 7vh;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+}
+
+.tasks-container {
+	display: flex;
+	justify-content: center;
+	position: relative;
+	flex-wrap: wrap;
+	margin: auto;
+	/* margin: auto clamp(100px, 14vw, 150px); */
+
+	height: 80vh;
+	width: 76vw;
+}
+
+.dashboard {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: relative;
+}
+
+.dashboard button {
+	height: 3rem;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	border: 2px solid #00792e;
+	font-weight: bolder;
+	font-size: 23px;
+	background-color: #00b144;
+	color: white;
+}
+
+.tasks {
+	display: flex;
+	/* justify-content: center; */
+	/* align-items: center; */
+	flex-direction: column;
+	padding: 1rem;
+	margin: auto;
+	width: 25%;
+	min-height: 150px;
+	height: fit-content;
+	border: 2px solid black;
+	margin: 2rem;
+}
+
+.task {
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+}
+
+details {
+	user-select: none;
+}
+
+details > p {
+	font-size: 15px;
+	font-weight: 100;
+}
+
+.task > * {
+	margin: 10px;
+}
+
+.add-task {
+	position: absolute;
+	left: 50vw;
+	top: 50vh;
+	transform: translate(-50%, -50%);
+	border: 1px solid grey;
+	border-radius: 10px;
+	backdrop-filter: blur(20px);
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+	padding: 1.4rem;
+	flex-direction: column;
+	background-color: #f5f5f5;
+}
+
+.add-task > * {
+	margin: 4px;
+	border-radius: 4px;
+	position: relative;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+	border: 2px solid #ddd;
+	border-radius: 4px;
+	padding: 0.5rem;
+	font-size: 1.2rem;
+}
+
+input[type="date"] {
+	border: 2px solid #ddd;
+	border-radius: 4px;
+	padding: 0.5rem;
+	font-size: 1rem;
+}
+
+input[type="submit"],
+button {
+	border: 2px solid #ddd;
+	border-radius: 10px;
+	padding: 0.5rem;
+	font-size: 1.3rem;
+	font-weight: bolder;
+	background-color: #00b144;
+	color: white;
+	padding: 10px;
+}
+
+textarea {
+	width: 30vw;
+	height: 20ch;
+	padding: 10px;
+	background-color: #eee;
+}
+
+.add-task-wrapper {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.date {
+	font-size: 10px;
+	font-weight: bold;
+	background-color: #00b144;
+	color: white;
+	width: fit-content;
+	padding: 5px 10px;
+	margin: 10px 2px;
+	border-radius: 15px;
+}
+
+.add-task-group {
+	position: fixed;
+	right: 10vw;
+	bottom: 10vh;
+	transform: scale(1.5);
+}
+
+.card {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 25vw;
+	height: 60vh;
+	background-color: #1ba100;
+	border-radius: 10px;
+	padding: 10px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card * {
+	margin: 10px;
+	color: white;
+	padding: 5px 15px;
+}
+
+.card input {
+	background-color: transparent;
+}
+
+.card input:focus {
+	outline: none;
+	border-bottom: 2px solid white;
+	background-color: rgba(43, 255, 0, 0.123);
+}
+
+input::placeholder {
+	color: white;
+}
+
+.card > form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+@media screen and (max-width: 906px) {
+	body {
+		overflow-x: hidden;
+		box-sizing: border-box;
+	}
+
+	.header {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		height: 16ch;
+		color: #fff;
+		width: 93vw;
+		overflow-x: hidden;
+		margin: 0;
+		position: relative;
+		background-color: greenyellow;
+		background: linear-gradient(to right, #11998e, #38ef7d);
+		padding: 10px;
+	}
+	.tasks-container {
+		width: 93vw;
+		margin: 0;
+		height: auto;
+	}
+
+	.tasks {
+		width: 100%;
+	}
+
+	textarea {
+		width: 90%;
+	}
+
+	.add-task {
+		left: 50vw;
+		top: 50vh;
+		transform: translate(-50%, -50%);
+	}
+
+	.add-task-wrapper {
+		width: 100vw;
+		height: 100vh;
+		display: grid;
+		place-items: center;
+		background-color: rgba(0, 0, 0, 0.445);
+	}
+
+	.add-task-group {
+		position: fixed;
+		right: 1.5em;
+		bottom: 2em;
+		transform: scale(1.4);
+	}
+
+	.card {
+		width: 70vw;
+		height: auto;
+	}
+
+	.card input {
+		width: 90%;
+	}
+}
