@@ -1,24 +1,17 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Signup() {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 	const [email, setEmail] = useState("");
 
+	const navigate = useNavigate();
+
 	const submit = async () => {
 		if (!username || !password || !email) return;
 
 		try {
-			// const data = await axios.post(
-			// 	"https://taskboardbackend.herokuapp.com/signup",
-			// 	{
-			// 		username,
-			// 		password,
-			// 		email,
-			// 	}
-			// );
-
 			let data = await fetch("https://taskboardbackend.herokuapp.com/signup", {
 				method: "POST",
 				headers: {
@@ -33,8 +26,9 @@ function Signup() {
 
 			data = await data.json();
 
-			console.log("data", data.data);
+			navigate("/login");
 		} catch (err) {
+			alert(err);
 			console.log("err", err);
 		}
 	};
