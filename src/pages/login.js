@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 const axios = require("axios");
-const { useNavigate, Link } = require("react-router-dom");
+const { useNavigate } = require("react-router-dom");
 
 function Login() {
 	const [username, setUsername] = useState("");
@@ -42,9 +42,6 @@ function Login() {
 				onChange={(e) => setPassword(e.target.value)}
 			/>
 			<button onClick={submit}>Log in</button>
-
-			<br />
-			<Link to="/signup">Create account</Link>
 		</div>
 	);
 }

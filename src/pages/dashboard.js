@@ -25,6 +25,21 @@ function Dashboard() {
 					<Tasks taskName={taskGroup.taskName} prevTasks={taskGroup.tasks} />,
 				]);
 			});
+			console.log(data);
+			// 	const data = await axios.get(
+			// 		"https://taskboardbackend.herokuapp.com/send",
+			// 		{
+			// 			withCredentials: true,
+			// 			Authorization: `Bearer ${localStorage.getItem("token")}`,
+			// 		}
+			// 	);
+			// 	setData(data.data);
+			// 	data.data.tasksGroup.forEach((taskGroup) => {
+			// 		setTasks((tasks) => [
+			// 			...tasks,
+			// 			<Tasks taskName={taskGroup.taskName} prevTasks={taskGroup.tasks} />,
+			// 		]);
+			// 	});
 		})();
 	}, []);
 
